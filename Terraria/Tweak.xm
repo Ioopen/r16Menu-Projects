@@ -167,11 +167,11 @@ double StrikeNPC(void *npc, int Damage, float knockBack, int hitDirection, bool 
 
 void setUp() {
 
-    Player_OpenBossBag = (void (*) (void *, int))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:34]];
-    Player_Teleport = (void (*)(void *, Vector2, int, int))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:32]];
-    CreateString = (void *(*)(void *, const char *))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:17]];
-    Player_KillMe = (void (*) (void *, double, int, bool))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:16]];
-    Player_AddBuff = (void (*) (void *, int, int, bool))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:31]];
+   	 Player_OpenBossBag = (void (*) (void *, int))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:34]];
+   	 Player_Teleport = (void (*)(void *, Vector2, int, int))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:32]];
+    	CreateString = (void *(*)(void *, const char *))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:17]];
+    	Player_KillMe = (void (*) (void *, double, int, bool))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:16]];
+    	Player_AddBuff = (void (*) (void *, int, int, bool))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:31]];
 	Player_QuickSpawnItem = (void (*)(void *, int, int))[UIKeyPatch getRealOffset:[APISession serverAddressAtIndex:3]];
 
 	[r16Hook hook:[APISession serverAddressAtIndex:2]
@@ -187,12 +187,12 @@ void setUp() {
 				original:(void **)&_StrikeNPC];
 	
 	[menu addPatch:r16Encrypt("Godmode")
-		  description:r16Encrypt("")
-             offsets:@[[APISession serverAddressAtIndex:6]]
-             hexPatches:@[[APISession serverAddressAtIndex:7]]];
+	     description:r16Encrypt("")
+             	offsets:@[[APISession serverAddressAtIndex:6]]
+             	hexPatches:@[[APISession serverAddressAtIndex:7]]];
 			 
 	[menu addSwitch:r16Encrypt("Inf-Mana")
-		  description:r16Encrypt("Leave this on infinite mp")];
+	      description:r16Encrypt("Leave this on infinite mp")];
 
 	[menu addSwitch:r16Encrypt("One-Hit Kill")
 	      description:r16Encrypt("")];
@@ -201,12 +201,12 @@ void setUp() {
 	      description:r16Encrypt("")];
 
 	[menu addPatch:r16Encrypt("No Drown")
-          description:r16Encrypt("") 
-             offsets:@[[APISession serverAddressAtIndex:9]]
-             hexPatches:@[[APISession serverAddressAtIndex:10]]];
+             description:r16Encrypt("") 
+             	offsets:@[[APISession serverAddressAtIndex:9]]
+             	hexPatches:@[[APISession serverAddressAtIndex:10]]];
 	
 	[menu addTextfieldRight:r16Encrypt("Spawn Item:") 
-		  description:r16Encrypt("")];
+	      description:r16Encrypt("")];
 		
 	[menu addTextfieldRight:r16Encrypt("Item Amount:") 
 	      description:r16Encrypt("")];
@@ -215,43 +215,43 @@ void setUp() {
 	      description:r16Encrypt("Use this to surpass max minions limit")];
 
 	[menu addSwitch:@"Spaz"
-          description:@""];
+              description:@""];
 
 	[menu addSwitch:@"Suicide"
-          description:@""];
+             description:@""];
 
 	[menu addSwitch:@"Ghost Mode"
-          description:@""];
+             description:@""];
 
 	[menu addSwitch:@"Insta Revive"
-          description:@""];
+             description:@""];
 
 	[menu addSwitch:@"No Dash-Delay"
-          description:@""];
+             description:@""];
 
 	[menu addSwitch:@"LastDeathPosition"
-          description:@""];
+              description:@""];
 
 	[menu addTextfieldRight:@"Buff ID:" 
-          description:@"(ID)"];
+             description:@"(ID)"];
 
 	[menu addTextfieldRight:@"Buff Time:" 
-          description:@"(number)"];
+             description:@"(number)"];
 
 	[menu addTextfieldRight:@"Set_Health" 
-          description:@"(number)"];
+             description:@"(number)"];
 
 	[menu addTextfieldRight:@"Set_Mana" 
-          description:@"(number)"];
+              description:@"(number)"];
 
 	[menu addTextfieldRight:@"Treasure Bag:"
-          description:@"(ID)"];
+              description:@"(ID)"];
 
 	[menu addTextfieldRight:@"Change Y:" 
-		  description:@"(number)"];
+	      description:@"(number)"];
 
 	[menu addTextfieldRight:@"Change X:" 
-          description:@"(number)"];
+              description:@"(number)"];
 }
 
 void startAuthentication() {
